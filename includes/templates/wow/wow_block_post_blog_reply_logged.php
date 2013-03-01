@@ -52,6 +52,7 @@
         ?>
     </div>
                         </div>
+						
                         <div class="content">
                             <div class="comment-ta">
                                 <textarea id="comment-ta-reply" cols="78" rows="3" name="detail" onfocus="textAreaFocused = true;" onblur="textAreaFocused = false;"></textarea>

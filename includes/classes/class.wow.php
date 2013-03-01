@@ -318,6 +318,21 @@ Class WoW {
                     }
                 }
                 break;
+			case 'services':
+				for($i = 0; $i < $count; $i++){
+					switch($url_array[$i]){
+						case 'services':
+								for($j = 0; $j < 10; $j++){
+									if(isset($url_array[$i + ($j) ]) && $url_array[ $i + ($j) ] != null){
+										$urldata['action' . $j] = $url_array[$i + ($j)];
+									}else{
+										$urldata['action' . $j] = null;
+									}
+								}
+						break;
+					}
+				}
+			break;
             //this is used for auto navigation menu generator
             default:
                 for($i = 2; $i < ($count); $i++) {

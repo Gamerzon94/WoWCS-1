@@ -46,3 +46,35 @@
         `a`.`type`
         FROM `wow_instance_bosses` AS `a`
         WHERE `a`.`instance_id` = 5035). MySQL error: "Table 'frozen.wow_instance_bosses' doesn't exist" (Error #1146)<br />
+<strong>DEBUG</strong> [01-03-2013 02:04:02]: WoW_DatabaseHandler::_query : unable to execute SQL query (
+            SELECT
+            `arena_team`.`arenateamid`,
+            `arena_team`.`name`,
+            `arena_team`.`captainguid`,
+            `arena_team`.`type`,
+            `arena_team_stats`.`rating`,
+            `characters`.`race` AS `raceId`
+            FROM `arena_team`
+            JOIN `characters` ON `characters`.`guid` = `arena_team`.`captainguid`
+            JOIN `arena_team_stats` ON `arena_team_stats`.`arenateamid` = `arena_team`.`arenateamid`
+            WHERE `arena_team`.`name` = 'Asfo'
+            ). MySQL error: "Table 'char.arena_team_stats' doesn't exist" (Error #1146)<br />
+<strong>DEBUG</strong> [01-03-2013 02:04:02]: WoW_DatabaseHandler::_query : unable to execute SQL query (
+            SELECT
+            `arena_team`.`arenateamid`,
+            `arena_team`.`name`,
+            `arena_team`.`captainguid`,
+            `arena_team`.`type`,
+            `arena_team_stats`.`rating`,
+            `characters`.`race` AS `raceId`
+            FROM `arena_team`
+            JOIN `characters` ON `characters`.`guid` = `arena_team`.`captainguid`
+            JOIN `arena_team_stats` ON `arena_team_stats`.`arenateamid` = `arena_team`.`arenateamid`
+            WHERE `arena_team`.`name` = 'Asfo'
+            ). MySQL error: "Table 'char.arena_team_stats' doesn't exist" (Error #1146)<br />
+<strong>ERROR</strong> [01-03-2013 02:33:00]: WoW_Template::LoadTemplate : unable to find template "content_services" (template theme: wow, overall: 0, path: C:\xampp\htdocs\includes\templates\wow\wow_content_services.php)!<br />
+<strong>ERROR</strong> [01-03-2013 02:33:00]: WoW_Template::LoadTemplate : unable to find template "content_services" (template theme: wow, overall: 0, path: C:\xampp\htdocs\includes\templates\wow\wow_content_services.php)!<br />
+<strong>ERROR</strong> [01-03-2013 02:33:53]: WoW_Template::LoadTemplate : unable to find template "content_services" (template theme: wow, overall: 0, path: C:\xampp\htdocs\includes\templates\wow\wow_content_services.php)!<br />
+<strong>ERROR</strong> [01-03-2013 02:33:53]: WoW_Template::LoadTemplate : unable to find template "content_services" (template theme: wow, overall: 0, path: C:\xampp\htdocs\includes\templates\wow\wow_content_services.php)!<br />
+<strong>ERROR</strong> [01-03-2013 03:05:18]: WoW_Template::LoadTemplate : unable to find template "content_serviceas" (template theme: wow, overall: 0, path: C:\xampp\htdocs\includes\templates\wow\wow_content_serviceas.php)!<br />
+<strong>ERROR</strong> [01-03-2013 03:05:18]: WoW_Template::LoadTemplate : unable to find template "content_serviceas" (template theme: wow, overall: 0, path: C:\xampp\htdocs\includes\templates\wow\wow_content_serviceas.php)!<br />

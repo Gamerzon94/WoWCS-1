@@ -131,8 +131,12 @@ border: 1px solid #CD9000;
 	</script>
 
 <?php
-if(WoW_Account::IsLoggedIn()) {
-    WoW_Template::LoadTemplate('block_post_blog_reply_logged');
+if(WoW_Account::IsLoggedIn()){
+	if(!WoW_Account::IsHaveActiveCharacter()){
+		echo WoW_Locale::GetString('template_characters_not_found');
+	}else{
+		WoW_Template::LoadTemplate('block_post_blog_reply_logged');
+	}
 }
 else {
     WoW_Template::LoadTemplate('block_post_blog_reply_not_logged');
