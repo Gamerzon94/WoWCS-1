@@ -78,3 +78,4 @@
 <strong>ERROR</strong> [01-03-2013 02:33:53]: WoW_Template::LoadTemplate : unable to find template "content_services" (template theme: wow, overall: 0, path: C:\xampp\htdocs\includes\templates\wow\wow_content_services.php)!<br />
 <strong>ERROR</strong> [01-03-2013 03:05:18]: WoW_Template::LoadTemplate : unable to find template "content_serviceas" (template theme: wow, overall: 0, path: C:\xampp\htdocs\includes\templates\wow\wow_content_serviceas.php)!<br />
 <strong>ERROR</strong> [01-03-2013 03:05:18]: WoW_Template::LoadTemplate : unable to find template "content_serviceas" (template theme: wow, overall: 0, path: C:\xampp\htdocs\includes\templates\wow\wow_content_serviceas.php)!<br />
+<strong>ERROR</strong> [01-03-2013 03:33:10]: WoW_Template::LoadTemplate : unable to find template "page_services" (template theme: wow, overall: 0, path: C:\xampp\htdocs\includes\templates\wow\wow_page_services.php)!<br />

@@ -1085,6 +1085,15 @@ class WoW_Layout {
                     )
                 );
                 break;
+			case 'services':
+				$css_data_page = array(
+					array(
+						'path' => WoW::GetWoWPath() . '/wow/static/css/services-index.css',
+						'version' => 10,
+						'browser' => false,
+					),
+				);
+				break;
             case 'zones':
                 $css_data_page =array(
                     array(

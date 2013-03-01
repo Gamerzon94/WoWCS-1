@@ -22,7 +22,7 @@
 class Services extends Controller {
 
 	public function main() {
-		WoW_Template::SetPageData('body_class', sprintf('%s  services-index', WoW_Locale::GetLocale(LOCALE_DOUBLE)));
+		WoW_Template::SetPageData('body_class', sprintf('%s  services-home', WoW_Locale::GetLocale(LOCALE_DOUBLE)));
 		WoW_Template::SetTemplateTheme('wow');
 		$url_data = WoW::GetUrlData('services');
 		if(empty($url_data['action1'])) {
@@ -31,7 +31,7 @@ class Services extends Controller {
         }else{
 			WoW_Template::ErrorPage(404);
 		}
-		WoW_Template::SetMenuIndex('menu-game');
+		WoW_Template::SetMenuIndex('menu-services');
 		WoW_Template::LoadTemplate('page_index');
 	}
 }
