@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * Copyright (C) 2013 Asfo <https://github.com/Asfo>
  * Copyright (C) 2010-2011 Shadez <https://github.com/Shadez>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -1762,5 +1763,25 @@ The Battle.net Account Team<br />
 
     'template_boss_abilities' => 'Sample Abilities',
     'template_boss_no_abilities' => 'This NPC has no known abilities.',
+	
+	'template_services_title' => 'World of Warcraft Account Services',
+	'template_services_description' => 'Use the account services available for World of Warcraft to easily upgrade your game and access a number of additional account options.',
+	'template_services_account_management_title' => 'Account Management',
+	'template_services_account_management_description' => 'Review and change your account security options, use additional account services, and more.',
+	'template_services_ban_list_title' => 'Ban List',
+	'template_services_ban_list_description' => 'Find which players have been Banned from the server. Beware of what you will see!',
+	'template_services_armory_title' => 'WoW Mobile Armory',
+	'template_services_armory_description' => 'Trying to find your Character, or a friend\'s? Browse the %s Armory.',
+	'template_services_recruit_a_friend_title' => 'Recruit a Friend',
+	'template_services_recruit_a_friend_description' => 'Earn epic rewards for each player you invite to play at %s',
+	'template_services_donation_shop_title' => 'Donation Shop',
+	'template_services_donation_shop_description' => 'Visit the Donation Shop and check out our services/gifts/prizes/etc.',
+	'template_services_subscription_title' => 'Game Purchase &amp; Subscription',
+	'template_services_subscription_description' => 'Explore the game\'s purchase and subscription options and decide which one is best for you!',
+	'template_services_scroll_of_resurrection_title' => 'Scroll of Resurrection',
+	'template_services_scroll_of_resurrection_description' => 'Get an Exclusive Faction Mount when you bring a friend back to World of Warcraft.',
+	'template_services_blizzard_store_title' => 'Blizzard Store',
+	'template_services_blizzard_store_description' => 'Visit the Blizzard store and check out World of Warcraft gaming peripherals, comics, and much more!',
+	
 );
 ?>

@@ -445,6 +445,10 @@ Class WoW {
     public static function GetWoWPath() {
         return WoWConfig::$WoW_Path;
     }
+	
+	public static function GetURL(){
+		return 'http://' . $_SERVER['SERVER_NAME'] . "/";
+	}	
     
     public static function IsRealm($realmName) {
         foreach(WoWConfig::$Realms as $realm) {
