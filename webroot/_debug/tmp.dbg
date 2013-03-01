@@ -1,0 +1,48 @@
+<strong>ERROR</strong> [01-03-2013 00:07:45]: DB::GetDB : attempt to access non-existed 8 database type!<br />
+<strong>ERROR</strong> [01-03-2013 00:08:22]: DB::GetDB : attempt to access non-existed 8 database type!<br />
+<strong>ERROR</strong> [01-03-2013 00:08:29]: DB::GetDB : attempt to access non-existed 8 database type!<br />
+<strong>ERROR</strong> [01-03-2013 00:08:32]: DB::GetDB : attempt to access non-existed 8 database type!<br />
+<strong>ERROR</strong> [01-03-2013 00:08:40]: DB::GetDB : attempt to access non-existed 8 database type!<br />
+<strong>ERROR</strong> [01-03-2013 00:08:45]: DB::GetDB : attempt to access non-existed 8 database type!<br />
+<strong>ERROR</strong> [01-03-2013 00:08:48]: DB::GetDB : attempt to access non-existed 8 database type!<br />
+<strong>ERROR</strong> [01-03-2013 00:09:15]: DB::GetDB : attempt to access non-existed 8 database type!<br />
+<strong>ERROR</strong> [01-03-2013 00:09:47]: DB::GetDB : attempt to access non-existed 8 database type!<br />
+<strong>ERROR</strong> [01-03-2013 00:13:07]: DB::GetDB : attempt to access non-existed 8 database type!<br />
+<strong>ERROR</strong> [01-03-2013 00:38:33]: WoW_Game::LoadZone : zone_key is empty, ignore.<br />
+<strong>ERROR</strong> [01-03-2013 00:38:33]: WoW_Game::LoadZone : zone_key is empty, ignore.<br />
+<strong>DEBUG</strong> [01-03-2013 00:38:44]: WoW_DatabaseHandler::_query : unable to execute SQL query (
+        SELECT
+        `a`.`boss_id` AS `id`,
+        `a`.`instance_id`,
+        `a`.`key`,
+        `a`.`name_en` AS `nameOriginal`,
+        `a`.`name_en` AS `name`,
+        `a`.`subname_en` AS `subNameOriginal`,
+        `a`.`subname_en` AS `subName`,
+        `a`.`description_en` AS `descriptionOriginal`,
+        `a`.`description_en` AS `description`,
+        `a`.`level`,
+        `a`.`flags`,
+        `a`.`health_n`,
+        `a`.`health_h`,
+        `a`.`type`
+        FROM `wow_instance_bosses` AS `a`
+        WHERE `a`.`instance_id` = 5035). MySQL error: "Table 'frozen.wow_instance_bosses' doesn't exist" (Error #1146)<br />
+<strong>DEBUG</strong> [01-03-2013 00:38:44]: WoW_DatabaseHandler::_query : unable to execute SQL query (
+        SELECT
+        `a`.`boss_id` AS `id`,
+        `a`.`instance_id`,
+        `a`.`key`,
+        `a`.`name_en` AS `nameOriginal`,
+        `a`.`name_en` AS `name`,
+        `a`.`subname_en` AS `subNameOriginal`,
+        `a`.`subname_en` AS `subName`,
+        `a`.`description_en` AS `descriptionOriginal`,
+        `a`.`description_en` AS `description`,
+        `a`.`level`,
+        `a`.`flags`,
+        `a`.`health_n`,
+        `a`.`health_h`,
+        `a`.`type`
+        FROM `wow_instance_bosses` AS `a`
+        WHERE `a`.`instance_id` = 5035). MySQL error: "Table 'frozen.wow_instance_bosses' doesn't exist" (Error #1146)<br />
