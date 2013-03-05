@@ -51,14 +51,14 @@ Class WoW_Utils {
      * @param    string $rName
      * @return   int
      **/
-    public function GetRealmIDByName($rName) {
+    public static function GetRealmIDByName($rName) {
         if($realms = explode('/', $rName)) {
             $rName = $realms[0];
         }
         return self::FindRealm(urldecode($rName));
     }
     
-    public function FindRealm($rName) {
+    public static function FindRealm($rName) {
         foreach(WoWConfig::$Realms as $realm) {
             if(strtolower($realm['name']) == strtolower($rName)) {
                 return $realm['id'];
@@ -74,7 +74,7 @@ Class WoW_Utils {
      * @param    array $arr
      * @return   array
      **/
-    public function GetMaxArray($arr) {
+    public static function GetMaxArray($arr) {
         if(!is_array($arr)) {
             WoW_Log::WriteError('%s : arr must be an array!', __METHOD__);
             return false;
@@ -100,7 +100,7 @@ Class WoW_Utils {
      * @param    int $value
      * @param    int $unitClass
      **/
-    public function ComputePetBonus($stat, $value, $unitClass) {
+    public static function ComputePetBonus($stat, $value, $unitClass) {
         if(!in_array($unitClass, array(CLASS_HUNTER, CLASS_WARLOCK))) {
             return -1;
         }
@@ -135,7 +135,7 @@ Class WoW_Utils {
      * @param    int $num
      * @return   float
      **/
-    public function GetFloatValue($value, $num) {
+    public static function GetFloatValue($value, $num) {
         $txt = unpack('f', pack('L', $value));
         return round($txt[1], $num);
     }
@@ -148,7 +148,7 @@ Class WoW_Utils {
      * @param    int $id
      * @return   int
      **/
-    public function GetRatingCoefficient($rating, $id) {
+    public static function GetRatingCoefficient($rating, $id) {
         if(!is_array($rating)) {
             return 1; // Do not return 0 because it will cause division by zero error.
         }
@@ -170,7 +170,7 @@ Class WoW_Utils {
      * @param    int $level
      * @return   array
      **/
-    public function GetRating($level) {
+    public static function GetRating($level) {
         return DB::WoW()->selectRow("SELECT * FROM `DBPREFIX_rating` WHERE `level`=%d", $level);
     }
     
@@ -182,7 +182,7 @@ Class WoW_Utils {
      * @param    int $min
      * @return   int
      **/
-    public function GetPercent($max, $min) {
+    public static function GetPercent($max, $min) {
         $percent = $max / 100;
         if($percent == 0) {
             return 0;
@@ -203,7 +203,7 @@ Class WoW_Utils {
      * @param    int $class
      * @return   float
      **/
-    public function GetAttackPowerForStat($statIndex, $effectiveStat, $class) {
+    public static function GetAttackPowerForStat($statIndex, $effectiveStat, $class) {
         $ap = 0;
         if($statIndex == STAT_STRENGTH) {
             switch($class) {
@@ -244,7 +244,7 @@ Class WoW_Utils {
      * @param    float $agility
      * @return   float
      **/
-    public function GetCritChanceFromAgility($rating, $class, $agility) {
+    public static function GetCritChanceFromAgility($rating, $class, $agility) {
         if(!is_array($rating)) {
             return 1;
         }
@@ -264,7 +264,7 @@ Class WoW_Utils {
      * @param    float $intellect
      * @return   float
      **/
-    public function GetSpellCritChanceFromIntellect($rating, $class, $intellect) {
+    public static function GetSpellCritChanceFromIntellect($rating, $class, $intellect) {
         if(!is_array($rating)) {
             return 1;
         }
@@ -283,7 +283,7 @@ Class WoW_Utils {
      * @param    int $class
      * @return   float
      **/
-    public function GetHRCoefficient($rating, $class) {
+    public static function GetHRCoefficient($rating, $class) {
         if(!is_array($rating)) {
             return 1;
         }
@@ -306,7 +306,7 @@ Class WoW_Utils {
      * @param    int $class
      * @return   float
      **/
-    public function GetMRCoefficient($rating, $class) {
+    public static function GetMRCoefficient($rating, $class) {
         if(!is_array($rating)) {
             return 1;
         }
@@ -328,7 +328,7 @@ Class WoW_Utils {
      * @param    int $id
      * @return   int
      **/
-    public function GetSkillIDFromItemID($id) {
+    public static function GetSkillIDFromItemID($id) {
         if($id == 0) {
             return SKILL_UNARMED;
         }
@@ -367,7 +367,7 @@ Class WoW_Utils {
      * @param    array $char_data
      * @return   array
      **/
-    public function GetSkillInfo($id, $char_data) {
+    public static function GetSkillInfo($id, $char_data) {
         $skillInfo = array(0, 0 , 0, 0, 0, 0);
         for ($i = 0; $i < 128; $i++) {
             if(($char_data[PLAYER_SKILL_INFO_1_1 + ($i * 3)] & 0x0000FFFF) == $id) {
@@ -386,7 +386,7 @@ Class WoW_Utils {
         return $skillInfo;
     }
     
-    public function GetMoneyFormat($amount) {
+    public static function GetMoneyFormat($amount) {
         $money_format['gold'] = floor($amount/(100*100));
         $amount = $amount-$money_format['gold']*100*100;
         $money_format['silver'] = floor($amount/100);
@@ -402,7 +402,7 @@ Class WoW_Utils {
      * @param    string $text.
      * @return   string
      **/
-    public function ValidateSpellText($text) {
+    public static function ValidateSpellText($text) {
         $letter = array("'",'"'     ,"<"   ,">"   ,">"   ,"\r","\n"  , "\n"    , "\n"   );
         $values = array("`",'&quot;',"&lt;","&gt;","&gt;",""  ,"<br>", "<br />", "<br/>");
         return str_replace($letter, $values, $text);
@@ -415,7 +415,7 @@ Class WoW_Utils {
      * @param    int $seconds
      * @return   string
      **/
-    public function GetTimeText($seconds) {
+    public static function GetTimeText($seconds) {
         $strings_array = array(
             'en' => array(
                 'days', 'hours', 'min', 'sec'
@@ -462,7 +462,7 @@ Class WoW_Utils {
      * @param    int $index
      * @return   string
      **/
-    public function GetRadius($index) {
+    public static function GetRadius($index) {
         $gSpellRadiusIndex = array(
              '7' => array(2,0,2),
              '8' => array(5,0,5),
@@ -520,7 +520,7 @@ Class WoW_Utils {
         return $radius[0] . ' - ' . $radius[2];
     }
     
-    public function AnalyzeLocales($loc1, $loc2, $returnAsText = false) {
+    public static function AnalyzeLocales($loc1, $loc2, $returnAsText = false) {
         if(!file_exists(WOW_DIRECTORY . '/includes/locales/locale_' . $loc1 . '.php') || !file_exists(WOW_DIRECTORY . '/includes/locales/locale_' . $loc2 . '.php')) {
             return false;
         }
@@ -552,7 +552,7 @@ Class WoW_Utils {
         return $returnAsText ? $text : true;
     }
     
-    public function GetAppropriateItemClassForClassID($classID) {
+    public static function GetAppropriateItemClassForClassID($classID) {
         switch($classID) {
             case CLASS_MAGE:
             case CLASS_PRIEST:
@@ -569,7 +569,7 @@ Class WoW_Utils {
         }
     }
     
-    public function IsBossCreature(&$data) {
+    public static function IsBossCreature(&$data) {
         if($data['classification'] == 3) {
             return true;
         }
@@ -586,7 +586,7 @@ Class WoW_Utils {
         return DB::WoW()->selectCell("SELECT 1 FROM `DBPREFIX_instance_data` WHERE `id` IN (%s) OR `name_id` IN (%s) OR `lootid_1` IN (%s) OR `lootid_2` IN (%s) OR `lootid_3` IN (%s) OR `lootid_4` IN (%s)", $entries, $entries, $entries, $entries, $entries, $entries);
     }
     
-    public function GetBossName(&$data) {
+    public static function GetBossName(&$data) {
         if($data['KillCredit1'] > 0) {
             $kc_entry = $data['KillCredit1'];
         }
@@ -600,7 +600,7 @@ Class WoW_Utils {
         return DB::WoW()->selectCell("SELECT `name_%s` FROM `DBPREFIX_instance_data` WHERE `id` IN (%s) OR `name_id` IN (%s) OR `lootid_1` IN (%s) OR `lootid_2` IN (%s) OR `lootid_3` IN (%s) OR `lootid_4` IN (%s) LIMIT 1", WoW_Locale::GetLocale(), $entries, $entries, $entries, $entries, $entries, $entries);
     }
     
-    public function GenerateLootPercent($boss_id, $db_table, $item_id) {
+    public static function GenerateLootPercent($boss_id, $db_table, $item_id) {
         $allowed_tables = array(
             'creature_loot_template'   => true,
             'disenchant_loot_template' => true,
@@ -641,7 +641,7 @@ Class WoW_Utils {
         return $percent;
     }
     
-    public function GetDropRate($percent) {
+    public static function GetDropRate($percent) {
         if($percent == 100) {
             return 6;
         }
@@ -665,7 +665,7 @@ Class WoW_Utils {
         }
     }
     
-    public function GetNpcAreaInfo($entry) {
+    public static function GetNpcAreaInfo($entry) {
         $npc_coordinates = DB::World()->selectRow("SELECT `guid`, `map`, `position_x`, `position_y` FROM `creature` WHERE `id` = %d LIMIT 1", $entry);
         if(!is_array($npc_coordinates)) {
             WoW_Log::WriteLog('%s : creature #%d was not found in `creature` table!', __METHOD__, $entry);
@@ -720,15 +720,15 @@ Class WoW_Utils {
         return 0;
     }
     
-    public function GetRaceKeyById($id) {
+    public static function GetRaceKeyById($id) {
         return isset(Data_Races::$races[$id]['key']) ? Data_Races::$races[$id]['key'] : null;
     }
     
-    public function GetClassSpecs() {
+    public static function GetClassSpecs() {
         return DB::WoW()->select("SELECT `class`, `spec`, `name_%s` AS `name` FROM `DBPREFIX_talent_icons` ORDER BY `class`, `spec`", WoW_Locale::GetLocale());
     }
     
-    public function GetClassRolesInfo($roles_flag) {
+    public static function GetClassRolesInfo($roles_flag) {
         $role_info = '';
         $roles_masks = array('ROLE_MASK_TANK', 'ROLE_MASK_HEALER', 'ROLE_MASK_MELEE', 'ROLE_MASK_RANGED', 'ROLE_MASK_CASTER');
         foreach($roles_masks as $mask) {
@@ -747,7 +747,7 @@ Class WoW_Utils {
         return $role_info;
     }
     
-    public function GetZoneName($zoneId) {
+    public static function GetZoneName($zoneId) {
         return DB::WoW()->selectCell("SELECT `name_%s` FROM `DBPREFIX_areas` WHERE `id` = %d", WoW_Locale::GetLocale(), $zoneId);
     }
 }

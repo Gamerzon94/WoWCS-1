@@ -34,7 +34,7 @@ Class WoWConfig {
     public static $WoW_Path          = ''; // Without slash at the end of path. If your site is in root directory, leave this empty.
                                            // For example: site is available at http://example.org/wowcs/
                                            // That means that you should set this variable as '/wowcs'.
-    public static $DefaultExpansion  = 2; // 0 - Classic, 1 - Burning Crusade, 2 - Wrath, 3 - Cataclysm
+    public static $DefaultExpansion  = 3; // 0 - Classic, 1 - Burning Crusade, 2 - Wrath, 3 - Cataclysm
     public static $Maintenance       = false; // Disable site? true/false
     public static $TwitterAccount    = 'theasfo'; // Twitter account name (displayed on maintenance page). Leave it blank if you don't use any.
     public static $UseRealmsStatus   = false; // Try to detect realms statuses when building account's character list?
@@ -52,9 +52,9 @@ Class WoWConfig {
     public static $Realms = array(
         1 => array(
             'id'   => 1,
-            'name' => 'Armory Realm',
+            'name' => 'Trinity',
             'type' => SERVER_TRINITY
-        )
+        ),
     );
 
     /**

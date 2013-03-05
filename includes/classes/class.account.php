@@ -1023,7 +1023,7 @@ Class WoW_Account {
             $total_chars_count = DB::Realm()->selectCell("SELECT SUM(`numchars`) FROM `realmcharacters` WHERE `acctid` IN (%s)", implode(', ', $account_ids));
             sprintf("SELECT SUM(`numchars`) FROM `realmcharacters` WHERE `acctid` IN (%s)",  implode(', ', $account_ids));
             self::$characters_data = DB::WoW()->select("SELECT * FROM `DBPREFIX_user_characters` WHERE `account` IN (%s) ORDER BY `index`",  implode(', ', $account_ids));
-        }
+		}
         else {
             $total_chars_count = 0;
         }
